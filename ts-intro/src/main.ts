@@ -1,24 +1,23 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+// ------------ variables ---------------
+let age:number;
+// age = 'nisse'; will not work because 'nisse' is a string and NOT a number.
+age = 52;
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+let firstName:string;
+firstName = 'Anders';
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+// --------------- arrays --------------
+// declaring an array with the type:
+let numbers:number[]; // array of numbers
+let members:string[]; // array of strings
+
+let figures: readonly number[] = [0,1,2,3,4,5,6,7,8,9];
+// figures.push(11); keyword 'readonly' prevents the array from being altered
+console.log(figures);
+
+// a union typed array can hold different types if declared as follows: (union variables can be declared in the same way)
+let ids:(number | string | boolean)[] = [];
+ids.push(36);
+ids.push('nisse');
+ids.push(false);
+console.log(ids);
